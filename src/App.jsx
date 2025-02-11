@@ -8,7 +8,7 @@ import bg_song from "./assets/media/bg_song.mp3";
 const App = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const defaultSender = "Karobia";
-  const defaultRecipient = " name of recipient";
+  const defaultRecipient = "alex karobia";
 
   const sender = searchParams.get("sender") || defaultSender;
   const recipient = searchParams.get("recipient") || defaultRecipient;
