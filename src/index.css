@@ -1,0 +1,26 @@
+@import "tailwindcss";
+/* Custom glow effect on focus */
+input:focus, textarea:focus {
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+}
+
+/* Custom button hover effect */
+button:hover {
+  background-position: right center;
+}
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(10px) rotate(5deg); /* Slight horizontal movement and rotation */
+  }
+  100% {
+    transform: translateY(-120vh) translateX(0) rotate(0deg); /* Move up and out of view */
+    opacity: 0;
+  }
+}
+.ease-out {
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
