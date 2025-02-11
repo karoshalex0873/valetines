@@ -28,7 +28,7 @@ const App = () => {
       sender: recipient,
       recipient: newRecipient || "Your Love",
       message:
-        customMessage || "Wishing you a day filled with love and happiness!",
+        customMessage || "You are the one that makes my heart skip a beat! Every moment with you is special, and I can't imagine my life without you. From your laughter to your kindness, I am grateful for every part of you. I love you more than words can say. 💖 Wishing you a day filled with love and happiness",
     };
     setSearchParams(params);
     setShowConfetti(true);
@@ -74,8 +74,16 @@ const App = () => {
   };
 
   // Toggle Music
+  useEffect(() => {
+    const audio = document.getElementById("background-music");
+    if (audio) {
+      audio.play().catch((error) => console.log("Autoplay blocked:", error));
+    }
+  }, []);
+  
   const toggleMusic = () => {
     const audio = document.getElementById("background-music");
+    
     if (isMusicPlaying) {
       audio.pause();
     } else {
@@ -99,7 +107,7 @@ const App = () => {
         <source src={bg_song} type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
-
+      <p className=" absolute top-4 right-15 font-light italic">touch the icon to here a cool music</p>
       <button
         onClick={toggleMusic}
         className="z-10 absolute top-4 right-4 bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-30"
